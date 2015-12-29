@@ -17,7 +17,9 @@ module App
       logger.debug "debug message"
       logger.info "info message"
       port = ENV['VCAP_APP_PORT']
-      "\n<h1>Hello World from port #{port}!!</h1>\n"
+      ip = ENV['CF_INSTANCE_IP']
+      cport = ENV['CF_INSTANCE_PORT']
+      "\n<h1>Hello VMWorld from #{ip} (#{cport})!!</h1>\n"
     end
 
     get "/broken" do
